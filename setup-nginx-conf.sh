@@ -55,7 +55,7 @@ sudo cp $TO_FILE $BAKUP_PATH
 sudo cp $BAK_FILE_NAME $TO_FILE
 
 sudo rm -rf $BAK_FILE_NAME
-
+sudo systemctl reload nginx
 
 #アクセスログもろもろ
 ACCESS_LOG_PATH=/var/log/nginx/access.log
