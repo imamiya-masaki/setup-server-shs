@@ -7,6 +7,10 @@ if [ -e $BAK_FILE_NAME ]; then
 sudo rm -rf $BAK_FILE_NAME
 fi
 
+if [ -e /var/log/nginx/access_test.log ]; then
+sudo rm -rf /var/log/nginx/access_test.log
+fi
+
 sudo echo "user  www-data;" >> $BAK_FILE_NAME
 sudo echo "worker_processes  auto;" >> $BAK_FILE_NAME
 sudo echo "" >> $BAK_FILE_NAME
