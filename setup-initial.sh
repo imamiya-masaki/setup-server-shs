@@ -1,3 +1,4 @@
+sudo chmod 777 /var/log
 if [ ! -e ./backup ]; then
     echo "created backup folder."
     sudo mkdir ./backup
