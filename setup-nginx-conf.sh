@@ -2,7 +2,11 @@
 BAK_FILE_NAME=memo_nginx.txt #上書きする用ファイル　名前はかぶらなければなんでも良い
 TO_FILE=/etc/nginx/nginx.conf #目的のファイル
 BAKUP_PATH=./backup #一応バックアップする
+
+if [ -e $BAK_FILE_NAME ]; then
 sudo rm -rf $BAK_FILE_NAME
+fi
+
 sudo echo "user  www-data;" >> $BAK_FILE_NAME
 sudo echo "worker_processes  auto;" >> $BAK_FILE_NAME
 sudo echo "" >> $BAK_FILE_NAME

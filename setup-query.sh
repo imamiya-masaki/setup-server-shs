@@ -1,8 +1,21 @@
-TARGET_FILE=/etc/mysql/mysql.conf.d/mysql.conf
+TARGET_FILE=/etc/mysql/mysql.conf.d/mysqld.cnf
+EDIT_FILE=./backup/mysqld.cnf
+BACKUP_FILE=./backup/mysql.cnf.backup
 sudo chmod 777 /var/log/mysql/
-sudo echo "slow_query_log = 1" >> $TARGET_FILE
-sudo echo "slow_query_log_file = /var/log/mysql/mysql-slow.log" >> $TARGET_FILE
-sudo echo "long_query_time = 0" >> $TARGET_FILE
+if [ -e $TARGET_FILE ]; then
+sudo cp $TARGET_FILE $BACKUP_FILE
+sudo cp $TARGET_FILE $EDIT_FILE
+sudo echo "slow_query_log = 1" >> $EDIT_FILE
+sudo echo "slow_query_log_file = /var/log/mysql/mysql-slow.log" >> $EDIT_FILE
+sudo echo "long_query_time = 0" >> $EDIT_FILE
+
+sudo cp $EDIT_FILE $TARGET_FILE
+sudo rm -rf $EDIT_FILE
+fi
+
+if [ ! -e $TARGET_FILE ]; then
+echo $TARGET_FILE" no exist."
+fi
 
 sudo service mysql restart # serve-restart
 
