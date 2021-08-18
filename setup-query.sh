@@ -3,13 +3,13 @@ EDIT_FILE=./backup/mysqld.cnf
 BACKUP_FILE=./backup/mysqld.cnf.backup
 EDITED_FILE=./edited/mysqld.cnf
 sudo chmod 777 /var/log/mysql/
-sudo chmod 777 $BACKUP_FILE
 sudo chmod 777 $TARGET_FILE
-sudo chmod 777 $EDIT_FILE
 sudo chmod 777 $EDITED_FILE
 if [ -e $TARGET_FILE ]; then
 sudo cp $TARGET_FILE $BACKUP_FILE
 sudo cp $TARGET_FILE $EDIT_FILE
+sudo chmod 777 $EDIT_FILE
+sudo chmod 777 $BACKUP_FILE
 sudo echo "slow_query_log = 1" >> $EDIT_FILE
 sudo echo "slow_query_log_file = /var/log/mysql/mysql-slow.log" >> $EDIT_FILE
 sudo echo "long_query_time = 0" >> $EDIT_FILE
