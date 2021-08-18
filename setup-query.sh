@@ -5,11 +5,11 @@ EDITED_FILE=./edited/mysqld.cnf
 sudo chmod 777 /var/log/mysql/
 sudo chmod 777 $TARGET_FILE
 if [ -e $TARGET_FILE ]; then
-    if [ ! -e $EDIT_FILE ]; then
+    if [ ! -e $BACKUP_FILE ]; then #バックアップがない時に新規で作業
         sudo cp $TARGET_FILE $BACKUP_FILE
         sudo cp $TARGET_FILE $EDIT_FILE
     fi
-    if [ -e $EDIT_FILE ]; then
+    if [ -e $BACKUP_FILE ]; then #バックアップがあれば初期段階が確約されるためこれを参照する
         sudo cp $BACKUP_FILE $EDIT_FILE
     fi
     sudo chmod 777 $EDIT_FILE
