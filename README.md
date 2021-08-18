@@ -24,4 +24,4 @@ pt-query-digesのセッティング
 上記三つを行う
 基本的にこれでいい感じにしたい
 
-  sudo ./setup-server.sh
+    sudo ./setup-server.sh
