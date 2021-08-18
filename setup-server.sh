@@ -3,4 +3,4 @@
 ./setup-query.sh
 
 
-echo "all complete"
+echo "all complete."
