@@ -9,11 +9,11 @@ if [ -e $TARGET_FILE ]; then
         sudo cp $TARGET_FILE $BACKUP_FILE
         sudo cp $TARGET_FILE $EDIT_FILE
     fi
-    sudo chmod 777 $EDIT_FILE
-    sudo chmod 777 $BACKUP_FILE
     if [ -e $EDIT_FILE ]; then
         sudo cp $BACKUP_FILE $EDIT_FILE
     fi
+    sudo chmod 777 $EDIT_FILE
+    sudo chmod 777 $BACKUP_FILE
     if [ -e /var/log/mysql/mysql-slow.log ]; then
         rm -rf /var/log/mysql/mysql-slow.log
     fi
