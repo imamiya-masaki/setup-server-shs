@@ -48,7 +48,7 @@ sudo echo "    include /etc/nginx/conf.d/*.conf;" >> $BAK_FILE_NAME
 sudo echo "    include /etc/nginx/sites-enabled/*.conf;" >> $BAK_FILE_NAME
 sudo echo "}" >> $BAK_FILE_NAME
 
-if [ ! -e $BAKUP_PATH]; then
+if [ ! -e $BAKUP_PATH ]; then
   sudo mkdir $BAKUP_PATH ## ここでバックアップとってます
 fi
 sudo cp $TO_FILE $BAKUP_PATH
