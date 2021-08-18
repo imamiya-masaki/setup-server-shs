@@ -48,8 +48,9 @@ sudo echo "    include /etc/nginx/conf.d/*.conf;" >> $BAK_FILE_NAME
 sudo echo "    include /etc/nginx/sites-enabled/*.conf;" >> $BAK_FILE_NAME
 sudo echo "}" >> $BAK_FILE_NAME
 
-
-sudo mkdir $BAKUP_PATH ## ここでバックアップとってます
+if [ ! -e $BAKUP_PATH]; then
+  sudo mkdir $BAKUP_PATH ## ここでバックアップとってます
+fi
 sudo cp $TO_FILE $BAKUP_PATH
 sudo cp $BAK_FILE_NAME $TO_FILE
 
@@ -58,5 +59,7 @@ sudo rm -rf $BAK_FILE_NAME
 
 #アクセスログもろもろ
 ACCESS_LOG_PATH=/var/log/nginx/access.log
-sudo rm $ACCESS_LOG_PATH
+if [ -e $ACCESS_LOG_PATH ]; then
+  sudo rm $ACCESS_LOG_PATH
+fi
 sudo systemctl reload nginx
