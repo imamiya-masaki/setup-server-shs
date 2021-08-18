@@ -24,7 +24,7 @@ echo $TARGET_FILE" no exist."
 fi
 
 sudo service mysql restart # serve-restart
-sudo chmod /var/log/mysql/mysql-slow.log
+sudo chmod 777 /var/log/mysql/mysql-slow.log
 if [ ! -e 3.0.5-test.tar.gz ]; then
 wget https://github.com/percona/percona-toolkit/archive/3.0.5-test.tar.gz
 tar zxvf 3.0.5-test.tar.gz
