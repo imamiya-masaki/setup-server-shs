@@ -23,7 +23,7 @@ sudo echo "http {" >> $BAK_FILE_NAME
 sudo echo "    include       /etc/nginx/mime.types;" >> $BAK_FILE_NAME
 sudo echo "    default_type  application/octet-stream;" >> $BAK_FILE_NAME
 sudo echo "" >> $BAK_FILE_NAME
-sudo echo "    log_format main \"time:\$time_local\"" >> $BAK_FILE_NAME
+sudo echo "    log_format ltsv \"time:\$time_local\"" >> $BAK_FILE_NAME
 sudo echo "    \"\\\thost:\$remote_addr\"" >> $BAK_FILE_NAME
 sudo echo "    \"\\\tforwardedfor:\$http_x_forwarded_for\"" >> $BAK_FILE_NAME
 sudo echo "    \"\\\treq:\$request\"" >> $BAK_FILE_NAME
@@ -39,7 +39,7 @@ sudo echo "    \"\\\tapptime:\$upstream_response_time\"" >> $BAK_FILE_NAME
 sudo echo "    \"\\\tcache:\$upstream_http_x_cache\"" >> $BAK_FILE_NAME
 sudo echo "    \"\\\tvhost:\$host\";" >> $BAK_FILE_NAME
 sudo echo "" >> $BAK_FILE_NAME
-sudo echo "    access_log  /var/log/nginx/access_test.log main;" >> $BAK_FILE_NAME
+sudo echo "    access_log  /var/log/nginx/access_test.log ltsv;" >> $BAK_FILE_NAME
 sudo echo "" >> $BAK_FILE_NAME
 sudo echo "    sendfile        on;" >> $BAK_FILE_NAME
 sudo echo "    #tcp_nopush     on;" >> $BAK_FILE_NAME
