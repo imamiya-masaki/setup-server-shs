@@ -20,7 +20,7 @@ for(let i = 0; i<lines.length; i++) {
             lines[i] = "\\\""
             break
         case "\\":
-            lines[i] = "\\\\\\"
+            lines[i] = "\\\\"
             break
         case "\$":
             lines[i] = "\\\$"
