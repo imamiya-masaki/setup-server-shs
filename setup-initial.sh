@@ -11,5 +11,11 @@ if [ ! -e ./edited ]; then
 fi
 sudo chmod 744 ./edited
 
+if [ ! -e ./edit ]; then
+    echo "created edit folder."
+    sudo mkdir ./edit
+fi
+sudo chmod 744 ./edit
+
 
 echo "setup complete."
