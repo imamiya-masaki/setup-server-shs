@@ -3,6 +3,8 @@ EDIT_FILE=./backup/mysqld.cnf
 BACKUP_FILE=./backup/mysqld.cnf.backup
 EDITED_FILE=./edited/mysqld.cnf
 sudo chmod 777 /var/log/mysql/
+sudo chmod 777 ./backup/mysqld.cnf
+sudo chmod 777 $TARGET_FILE
 if [ -e $TARGET_FILE ]; then
 sudo cp $TARGET_FILE $BACKUP_FILE
 sudo cp $TARGET_FILE $EDIT_FILE
