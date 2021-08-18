@@ -28,3 +28,5 @@ tar zxvf 3.0.5-test.tar.gz
 sudo mv ./percona-toolkit-3.0.5-test/bin/pt-query-digest /usr/local/bin/pt-query-digest
 fi
 # /var/log/mysql/
+
+echo "setup pt-query-digest."

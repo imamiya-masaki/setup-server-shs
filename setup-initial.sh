@@ -7,3 +7,6 @@ if [ ! -e ./edited ]; then
     echo "created edited folder."
     mkdir ./edited
 fi
+
+
+echo "setup complete."

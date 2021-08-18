@@ -67,3 +67,6 @@ if [ -e $ACCESS_LOG_PATH ]; then
   sudo rm $ACCESS_LOG_PATH
 fi
 sudo systemctl reload nginx
+
+
+echo "setup nginx-conf."
