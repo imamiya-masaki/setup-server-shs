@@ -1,6 +1,6 @@
 TARGET_FILE=/etc/mysql/mysql.conf.d/mysqld.cnf
 EDIT_FILE=./edit/mysqld.cnf
-BACKUP_FILE=./backup/mysqld.cnf.backup
+BACKUP_FILE=./backup/mysqld.cnf.original
 EDITED_FILE=./edited/mysqld.cnf
 sudo chmod 777 /var/log/mysql/
 sudo chmod 777 $TARGET_FILE

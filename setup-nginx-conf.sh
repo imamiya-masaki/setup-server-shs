@@ -1,7 +1,7 @@
 # nginxファイル作成
 BAK_FILE_NAME=memo_nginx.txt #上書きする用ファイル　名前はかぶらなければなんでも良い
 TO_FILE=/etc/nginx/nginx.conf #目的のファイル
-BAKUP_PATH=./backup #一応バックアップする
+BAKUP_PATH=./backup/nginx.conf.original #一応バックアップする
 EDITED_FILE=./edited/nginx.conf #エディット先も保存
 if [ -e $BAK_FILE_NAME ]; then
 sudo rm -rf $BAK_FILE_NAME
