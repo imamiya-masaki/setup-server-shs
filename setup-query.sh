@@ -46,5 +46,6 @@ echo "query-digester"
 git clone https://github.com/kazeburo/query-digester.git
 cd query-digester
 sudo install query-digester /usr/local/bin
+cd ..
 
 echo "setup pt-query-digest."
