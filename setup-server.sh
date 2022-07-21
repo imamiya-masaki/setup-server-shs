@@ -4,10 +4,7 @@
 ./setup-query.sh
 
 #mkdirで、どこでも利用したいshellscriptを置いておく
-mkdir ~/bin
-sudo chmod +x ./clear-access.sh
-mv ./clear-access.sh ~/bin
-echo 'PATH="$PATH:~/bin"'
+./set-shell.sh
 
 sudo service nginx start #一応最後にnginxを再スタートさせとく
 
